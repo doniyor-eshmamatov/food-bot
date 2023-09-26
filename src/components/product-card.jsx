@@ -46,7 +46,7 @@ export default function ProductCard({ el }) {
 
             {
                 !cart.every(item => item.id !== el.id) ? (
-                    <div className="added-cart"><button className="added-to-cart add-down" onClick={() => downCartCount(el.id, count - 1)}>-</button><button className="added-to-cart">{count}</button><button className="added-to-cart add-up" onClick={() => upCartCount(el.id, count + 1)}>+</button ></div >
+                    <div className="added-cart"><button className="added-to-cart add-down" onClick={() => downCartCount(el.id, count - 1)}>-</button><button className="added-to-cart cart-count">{count}</button><button className="added-to-cart add-up" onClick={() => upCartCount(el.id, count + 1)}>+</button ></div >
                 ) :
                     <button className="add-to-cart" onClick={() => addCart(el)}>+ Savatga</button>
             }
