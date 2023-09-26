@@ -2,10 +2,14 @@ import React, { useEffect, useState } from 'react'
 
 export default function FilterList() {
     const [categories, setCategories] = useState([])
-    const [activeCategory, setActiveCategory] = useState({})
-    const active2 = true
+    const [activeCategory, setActiveCategory] = useState({name: 'Mahsulotlar'})
 
     const filterData = [
+        // {
+        //     id: 0,
+        //     name: 'Barchasi',
+        //     active: true
+        // },
         {
             id: 1,
             name: 'Hot Dog',
@@ -34,6 +38,7 @@ export default function FilterList() {
     ]
 
     function filter(active) {
+        setActiveCategory(active)
         const newArr = filterData.filter(cat => cat.id !== active.id)
         return setCategories([{ ...active, active: true }, ...newArr])
     }
@@ -51,7 +56,7 @@ export default function FilterList() {
                     })
                 }
             </ul>
-            <h1 className="filter-title-h1">Hot Dog</h1>
+            <h1 className="filter-title-h1">{activeCategory.name}</h1>
         </div>
     )
 }

@@ -1,33 +1,28 @@
 body {
-  --bg-color: var(--tg-theme-bg-color, #fff);
+  --bg-color: #fff;
   font-family: sans-serif;
-  background-color: var(--bg-color);
-  color: var(--tg-theme-text-color, #222);
+  background-color: #fff;
+  color: #222;
   font-size: 14px;
   margin: 0;
   padding: 0;
-  color-scheme: var(--tg-color-scheme);
-}
-
-a {
-  color: var(--tg-theme-link-color, #2678b6);
 }
 
 
 button {
-  color: var(--tg-theme-button-text-color, #ffffff);
+  color: #ffffff;
   cursor: pointer;
 }
 
 
 
 section {
-  background-color: var(--bg-color, #ffffff);
+  background-color: #ffffff;
 }
 
 
 li {
-  color: var(--tg-theme-hint-color, #a8a8a8);
+  color: #a8a8a8;
 }
 
 
@@ -89,21 +84,26 @@ body {
 }
 
 .filter-item {
-  padding: 3px 15px;
+  padding: 8px 15px;
   border-radius: 14px;
   background-color: #e3e1dee4;
+  border:2px solid #e3e1dee4;
   font-weight: 500;
   min-width: 100px;
   text-align: center;
+  color: #222;
 }
 
 .filter-item-active {
-  background-color: #EA80FC;
+  border:2px solid #EA80FC;
+  background-color: #fff;
+  color: #222;
 } 
 
-.filter-title h1 {
+.filter-title-h1 {
   font-weight: 600;
-  padding: 7px 0;
+  padding: 12px 0;
+  color: #222;
 }
 
 .products {
@@ -190,7 +190,7 @@ body {
   transform: translateX(-50%);
   justify-content: space-between;
   gap: 10px;
-  background-color: var(--bg-color);
+  background-color: #fff;
 }
 
 .navigate-cart-button {
@@ -203,7 +203,7 @@ body {
   font-size: 14px;
   outline: none;
   text-decoration: none;
-  color: var(--tg-theme-button-text-color, #ffffff);
+  color: #ffffff;
   cursor: pointer;
 }
 
