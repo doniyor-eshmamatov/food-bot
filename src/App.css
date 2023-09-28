@@ -108,7 +108,7 @@ body {
 
 .products {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
 }
 
@@ -116,14 +116,13 @@ body {
 .product-card {
   display: flex;
   flex-direction: column;
-  align-items: center;
   padding: 7px;
   border-radius: 14px;
   /* box-shadow: #dbd4cc8e 0px 8px 24px; */
 }
 
 .product-img {
-  min-height: 100px;
+  height: 110px;
   background-color: #22222253;
   overflow: hidden;
   display: flex;
