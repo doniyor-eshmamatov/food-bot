@@ -1,7 +1,8 @@
 
 
 const API_ENDPOINTS = {
-    CATEGORIES: 'category-list/'
+    CATEGORIES: 'api/category-list/',
+    AUTH_CHECK: 'auth/check'
 }
 
 export default API_ENDPOINTS

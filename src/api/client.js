@@ -5,7 +5,7 @@ const Client = {
     get: (url) => {
         return apiService.fetchData({
             method: 'get',
-            url: url,
+            url: url
         })
     },
     post: (url, data) => {

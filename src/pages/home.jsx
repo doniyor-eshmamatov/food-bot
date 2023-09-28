@@ -23,9 +23,9 @@ export default function HomePage({ tele }) {
         }
     }
 
-    async function getMe(id) {
-        const resp = await ''
-
+    async function getMe(chat_id) {
+        const resp = await Client.get(API_ENDPOINTS.AUTH_CHECK)
+        console.log(resp);
     }
 
     useEffect(() => {
@@ -33,7 +33,7 @@ export default function HomePage({ tele }) {
         setShowPage(true)
         if (query.search !== '') {
             console.log(query.search.split('?')[1]);
-            // getMe(query.search.split('?')[1])
+            getMe(query.search.split('?')[1])
         }
     }, [])
 
