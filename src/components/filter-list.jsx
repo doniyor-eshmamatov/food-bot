@@ -1,41 +1,11 @@
 import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 
 export default function FilterList() {
     const [categories, setCategories] = useState([])
     const [activeCategory, setActiveCategory] = useState({name: 'Mahsulotlar'})
 
-    const filterData = [
-        // {
-        //     id: 0,
-        //     name: 'Barchasi',
-        //     active: true
-        // },
-        {
-            id: 1,
-            name: 'Hot Dog',
-            active: false
-        },
-        {
-            id: 2,
-            name: 'Combo',
-            active: false
-        },
-        {
-            id: 3,
-            name: 'Palov',
-            active: false
-        },
-        {
-            id: 4,
-            name: 'Lavash',
-            active: false
-        },
-        {
-            id: 5,
-            name: 'Burger',
-            active: false
-        }
-    ]
+    const filterData = useSelector(state => state.categories)
 
     function filter(active) {
         setActiveCategory(active)

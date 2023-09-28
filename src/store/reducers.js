@@ -36,6 +36,7 @@ const rootSlice = createSlice({
                 img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRso-wqNNseGbky7b5syss8oA7AQTbmyhpm2HUt0EpfIpY9kHGsw8T9yxlWb9LMEVuOu4M&usqp=CAU'
             }
         ],
+        categories: [],
         cartList: []
     },
     reducers: {
@@ -51,10 +52,13 @@ const rootSlice = createSlice({
             const item = { ...state.cartList.find(el => el.id === action.payload.id), count: action.payload.count }
             const itemIndex = state.cartList.findIndex(el => el.id === action.payload.id)
             state.cartList.splice(itemIndex, 1, item)
+        },
+        setCategories: (state, action) => {
+            state.categories = action.payload
         }
     },
 });
 
-export const { addToCart, upCart, downCart } = rootSlice.actions;
+export const { addToCart, upCart, downCart, setCategories } = rootSlice.actions;
 
 export default rootSlice.reducer;

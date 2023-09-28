@@ -2,16 +2,32 @@ import React, { useEffect, useState } from 'react'
 import FilterList from '../components/filter-list'
 import ProductCard from '../components/product-card'
 import Navigation from '../components/navigation'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { CSSTransition } from 'react-transition-group'
+import Client from '../api/client'
+import API_ENDPOINTS from '../api/api-endpoints'
+import { setCategories } from '../store/reducers'
+import { useParams } from 'react-router-dom'
 
 export default function HomePage({ tele }) {
 
+    const dispatch = useDispatch()
     const products = useSelector(state => state.products)
     const [showPage, setShowPage] = useState(false);
 
+    const query = useParams()
+    console.log(query);
+
+    async function getCategories() {
+        const resp = await Client.get(API_ENDPOINTS.CATEGORIES)
+        if (resp.status === 200) {
+            dispatch(setCategories(resp.data.results))
+        }
+    }
+
 
     useEffect(() => {
+        getCategories()
         setShowPage(true)
     }, [])
 
@@ -23,6 +39,7 @@ export default function HomePage({ tele }) {
             unmountOnExit
         >
             <div className="main">
+                <h1>{JSON.stringify(query)}</h1>
 
                 <FilterList />
                 <div className='products'>
