@@ -7,7 +7,7 @@ import { CSSTransition } from 'react-transition-group'
 import Client from '../api/client'
 import API_ENDPOINTS from '../api/api-endpoints'
 import { setCategories } from '../store/reducers'
-import { useParams } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 export default function HomePage({ tele }) {
 
@@ -15,7 +15,7 @@ export default function HomePage({ tele }) {
     const products = useSelector(state => state.products)
     const [showPage, setShowPage] = useState(false);
 
-    const query = useParams()
+    const query = useLocation()
     console.log(query);
 
     async function getCategories() {
@@ -39,7 +39,7 @@ export default function HomePage({ tele }) {
             unmountOnExit
         >
             <div className="main">
-                <h1>{JSON.stringify(query)}</h1>
+                <h1>{JSON.stringify(query.pathname)}</h1>
 
                 <FilterList />
                 <div className='products'>

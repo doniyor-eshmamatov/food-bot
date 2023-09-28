@@ -22,7 +22,7 @@ const Client = {
             data
         })
     },
-    delete: (url, data) => {
+    delete: (url) => {
         return apiService.fetchData({
             method: 'delete',
             url
