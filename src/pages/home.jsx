@@ -39,7 +39,7 @@ export default function HomePage({ tele }) {
             unmountOnExit
         >
             <div className="main">
-                <h1>{JSON.stringify(query.pathname)}</h1>
+                <h1>{JSON.stringify(query.search)}</h1>
 
                 <FilterList />
                 <div className='products'>
