@@ -53,7 +53,7 @@ export default function CartItem({ el }) {
       <img className='cart-item-img' src={el.img} width={70} />
       <div className='cart-item-info'>
         <p className='cart-item-title'>{el.name}</p>
-        <p className='cart-item-count'>{el.count} dona</p>
+        <p className='cart-item-count'>Umumiy {el.price * el.count} so'm</p>
       </div>
       <div className='cart-item-action'>
         <button className="added-to-cart">{count}</button>

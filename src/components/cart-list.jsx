@@ -5,7 +5,9 @@ export default function CartList({ data }) {
     return (
         <div className='cart-list'>
             {
-                data.map(el => <CartItem el={el} key={el.id}/>)
+                data.length > 0 ?
+                data.map(el => <CartItem el={el} key={el.id}/>) :
+                <p className='cart-empty-text'>Savat bo'sh</p>
             }
         </div>
     )

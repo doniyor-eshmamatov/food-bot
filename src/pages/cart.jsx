@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { CSSTransition } from 'react-transition-group'
 import { Link } from 'react-router-dom'
 import { clearCart } from '../store/reducers'
+import NavigationCart from '../components/navigation-cart'
 
 export default function CartPage({ tele }) {
     const cartList = useSelector(state => state.cartList)
@@ -32,7 +33,7 @@ export default function CartPage({ tele }) {
                 </h1>
                 <CartList data={cartList} />
                 <div className="navigate-cart">
-                    <Navigation route="/" tele={tele} maintext="Mahsulotlar" />
+                    <NavigationCart tele={tele} />
                 </div>
             </div>
         </CSSTransition>
