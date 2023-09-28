@@ -14,9 +14,7 @@ export default function HomePage({ tele }) {
     const dispatch = useDispatch()
     const products = useSelector(state => state.products)
     const [showPage, setShowPage] = useState(false);
-
     const query = useLocation()
-    console.log(query);
 
     async function getCategories() {
         const resp = await Client.get(API_ENDPOINTS.CATEGORIES)
@@ -25,10 +23,18 @@ export default function HomePage({ tele }) {
         }
     }
 
+    async function getMe(id) {
+        const resp = await ''
+
+    }
 
     useEffect(() => {
         getCategories()
         setShowPage(true)
+        if (query.search !== '') {
+            console.log(query.search.split('?')[1]);
+            // getMe(query.search.split('?')[1])
+        }
     }, [])
 
     return (
@@ -39,8 +45,6 @@ export default function HomePage({ tele }) {
             unmountOnExit
         >
             <div className="main">
-                <h1>{JSON.stringify(query.search)}</h1>
-
                 <FilterList />
                 <div className='products'>
                     {

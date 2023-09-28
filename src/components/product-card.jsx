@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { addToCart, downCart, upCart } from '../store/reducers'
+import { addToCart, downCart, removeOnCart, upCart } from '../store/reducers'
+import { CSSTransition } from 'react-transition-group';
+import ConfirmModal from './confirm-modal';
 
 export default function ProductCard({ el }) {
     const [count, setCount] = useState(1)
-
     const dispatch = useDispatch()
     const cart = useSelector(state => state.cartList)
 

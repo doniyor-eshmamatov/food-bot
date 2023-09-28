@@ -43,6 +43,13 @@ const rootSlice = createSlice({
         addToCart: (state, action) => {
             state.cartList.push(action.payload)
         },
+        removeOnCart: (state, action) => {
+            const arr = state.cartList.filter(el => el.id !== action.payload.id)
+            state.cartList = arr
+        },
+        clearCart: (state, action) => {
+            state.cartList = []
+        },
         upCart: (state, action) => {
             const item = { ...state.cartList.find(el => el.id === action.payload.id), count: action.payload.count }
             const itemIndex = state.cartList.findIndex(el => el.id === action.payload.id)
@@ -59,6 +66,6 @@ const rootSlice = createSlice({
     },
 });
 
-export const { addToCart, upCart, downCart, setCategories } = rootSlice.actions;
+export const { addToCart, upCart, downCart, setCategories, removeOnCart, clearCart } = rootSlice.actions;
 
 export default rootSlice.reducer;
