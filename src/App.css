@@ -132,11 +132,22 @@ body {
 }
 
 .cart-item-img {
-  min-height: 100px;
+  height: 70px;
+  width: 70px;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+.cart-item-img img {
+  height: 100%;
+}
+
 
 .product-img img {
   /* border-radius: 14px; */

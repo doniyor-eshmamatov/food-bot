@@ -51,7 +51,7 @@ export default function CartItem({ el }) {
   return (
     <div className='cart-item'>
       <div className='cart-item-img'>
-        <img className='' src={el.image} width={70} />
+        <img className='' src={el.image} />
       </div>
       <div className='cart-item-info'>
         <p className='cart-item-title'>{el.name}</p>
