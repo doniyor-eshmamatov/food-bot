@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { CSSTransition } from 'react-transition-group'
 import Client from '../api/client'
 import API_ENDPOINTS from '../api/api-endpoints'
-import { setCategories } from '../store/reducers'
+import { setCategories, setProducts } from '../store/reducers'
 import { useLocation } from 'react-router-dom'
 
 export default function HomePage({ tele }) {
@@ -23,6 +23,13 @@ export default function HomePage({ tele }) {
         }
     }
 
+    async function getProducts() {
+        const resp = await Client.get(API_ENDPOINTS.PRODUCT_LIST)
+        if (resp.status === 200) {
+            dispatch(setProducts(resp.data.results))
+        }
+    }
+
     async function getMe(chat_id) {
         const resp = await Client.get(API_ENDPOINTS.AUTH_CHECK)
         console.log(resp);
@@ -30,6 +37,7 @@ export default function HomePage({ tele }) {
 
     useEffect(() => {
         getCategories()
+        getProducts()
         setShowPage(true)
         if (query.search !== '') {
             console.log(query.search.split('?')[1]);
