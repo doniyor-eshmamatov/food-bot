@@ -4,7 +4,6 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import HomePage from './pages/home';
 import DetailPage from './pages/detail';
 import CartPage from './pages/cart';
-import { CSSTransition } from 'react-transition-group';
 
 const tele = window.Telegram.WebApp
 

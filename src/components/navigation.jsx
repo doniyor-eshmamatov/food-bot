@@ -1,8 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function Navigation({ tele, route, maintext = "Savat" }) {
+export default function Navigation({ route, maintext = "Savat" }) {
 
+    const tele = window.Telegram.WebApp
     function closeMenu() {
         tele.close()
     }
