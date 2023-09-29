@@ -42,7 +42,7 @@ export default function DetailPage() {
     }
   }
 
-  const cardStyles = { width: '100%', height: 250, margin: 0, marginRight: 10, borderRadius: 12, marginTop: 20 }
+  const cardStyles = { width: '100%', height: 250, margin: 0, marginRight: 10, borderRadius: 12, marginTop: 10 }
 
 
   useEffect(() => {
@@ -65,7 +65,7 @@ export default function DetailPage() {
         </Link>
         {
           data ? <div className="product-card">
-            <div className="product-img" style={cardStyles}>
+            <div className="product-img-img" style={cardStyles}>
               <img src={data.image} alt="product picture" />
             </div>
             <div className="detail-info">

@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 
 export default function DetailSkeleton() {
-    const cardStyles = { width: '100%', height: 250, margin: 0, marginRight: 10, borderRadius: 12, marginTop: 20 }
-    const titleStyles = { width: '100%', height: 25, margin: 0, marginRight: 10, borderRadius: 12, marginTop: 20 }
+    const cardStyles = { width: '100%', height: 250, margin: 0, marginRight: 10, borderRadius: 12, marginTop: 10 }
+    const titleStyles = { width: '100%', height: 20, margin: 0, marginRight: 10, borderRadius: 12, marginTop: 10 }
 
     return (
         <div>
