@@ -75,7 +75,7 @@ export default function DetailPage() {
 
             {
               !cart.every(item => item.id !== data.id) ? (
-                <div className="added-cart"><button className="added-to-cart add-down" onClick={() => downCartCount(data.id, count - 1)}>-</button><button className="added-to-cart">{count}</button><button className="added-to-cart add-up" onClick={() => handleUp(data.id, count + 1)}>+</button ></div >
+                <div className="added-cart"><button className="added-to-cart add-down" onClick={() => handleDown(data.id, count - 1)}>-</button><button className="added-to-cart">{count}</button><button className="added-to-cart add-up" onClick={() => handleUp(data.id, count + 1)}>+</button ></div >
               ) :
                 <button className="add-to-cart" onClick={() => handleAdd(data)}>+ Savatga</button>
             }
