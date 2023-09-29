@@ -6,7 +6,8 @@ const rootSlice = createSlice({
     initialState: {
         products: [],
         categories: [],
-        cartList: []
+        cartList: [],
+        me: '',
     },
     reducers: {
         addToCart: (state, action) => {
@@ -34,10 +35,14 @@ const rootSlice = createSlice({
         },
         setProducts: (state, action) => {
             state.products = action.payload
+        },
+        setMe: (state, action) => {
+            localStorage.setItem('_disdbfofnwoejndfc', action.payload)
+            state.me = action.payload
         }
     },
 });
 
-export const { addToCart, upCart, downCart, setCategories, removeOnCart, clearCart, setProducts } = rootSlice.actions;
+export const { addToCart, upCart, downCart, setCategories, removeOnCart, clearCart, setProducts, setMe } = rootSlice.actions;
 
 export default rootSlice.reducer;

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { downCart, removeOnCart, upCart } from '../store/reducers'
+import { useSelector } from 'react-redux'
 import ConfirmModal from './confirm-modal'
 import { CSSTransition } from 'react-transition-group'
+import useCart from '../utils/hooks/useCart'
 
 export default function CartItem({ el }) {
 
@@ -10,28 +10,30 @@ export default function CartItem({ el }) {
   const [deleteId, setDeleteId] = useState(null)
   const [showModal, setShowModal] = useState(true);
 
-  const dispatch = useDispatch()
   const cart = useSelector(state => state.cartList)
 
 
-  function upCartCount(id, countId) {
+  const { upCartCount, downCartCount, removeInCart } = useCart()
+
+  const handleUp = (id, countId) => {
     setCount(countId)
-    dispatch(upCart({ id: id, count: countId }))
+    upCartCount(id, countId)
   }
 
 
-  function downCartCount(id, countId) {
+  function handleDown(id, countId) {
     if (countId > 0) {
       setCount(countId)
-      dispatch(downCart({ id: id, count: countId }))
+      downCartCount(id, countId)
     } else {
       setDeleteId(id)
       setShowModal(false)
     }
   }
 
+
   function onSuccess() {
-    dispatch(removeOnCart({ id: deleteId }))
+    removeInCart(deleteId)
     setShowModal(true)
   }
 
@@ -59,7 +61,7 @@ export default function CartItem({ el }) {
       </div>
       <div className='cart-item-action'>
         <button className="added-to-cart">{count}</button>
-        <div className="added-cart"><button style={{ color: "#000" }} className="added-to-cart add-down" onClick={() => downCartCount(el.id, count - 1)}>-</button><button style={{ color: "#000" }} className="added-to-cart add-up" onClick={() => upCartCount(el.id, count + 1)}>+</button ></div >
+        <div className="added-cart"><button style={{ color: "#000" }} className="added-to-cart add-down" onClick={() => handleDown(el.id, count - 1)}>-</button><button style={{ color: "#000" }} className="added-to-cart add-up" onClick={() => handleUp(el.id, count + 1)}>+</button ></div >
       </div>
 
       <CSSTransition

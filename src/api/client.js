@@ -1,6 +1,5 @@
 import apiService from "./api-service"
 
-
 const Client = {
     get: (url) => {
         return apiService.fetchData({
@@ -12,14 +11,14 @@ const Client = {
         return apiService.fetchData({
             method: 'post',
             url,
-            data
+            data: { chat_id, ...data }
         })
     },
     patch: (url, data) => {
         return apiService.fetchData({
             method: 'patch',
             url,
-            data
+            data: { chat_id, ...data }
         })
     },
     delete: (url) => {
