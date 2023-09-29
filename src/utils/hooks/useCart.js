@@ -7,7 +7,7 @@ const useCart = () => {
 
 
     function addCart(data) {
-        dispatch(addToCart(data))
+        dispatch(addToCart({ ...data, count: 1 }))
     }
 
     function upCartCount(id, countId) {
