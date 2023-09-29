@@ -8,6 +8,7 @@ import Client from '../api/client'
 import API_ENDPOINTS from '../api/api-endpoints'
 import { setCategories, setProducts } from '../store/reducers'
 import { useLocation } from 'react-router-dom'
+import ProductCardKkeleton from '../components/skeleton/product-card-skeleton'
 
 export default function HomePage({ tele }) {
 
@@ -51,14 +52,15 @@ export default function HomePage({ tele }) {
             timeout={300}
             classNames="page"
             unmountOnExit
-        >
+            >
             <div className="main">
-                <FilterList />
+            <FilterList />
                 <div className='products'>
                     {
-                        products.map(el => {
-                            return <ProductCard el={el} key={el.id} />
-                        })
+                        products?.length > 0 ?
+                            products.map(el => {
+                                return <ProductCard el={el} key={el.id} />
+                            }) : <ProductCardKkeleton />
                     }
                 </div >
                 <div className="navigate-cart">
