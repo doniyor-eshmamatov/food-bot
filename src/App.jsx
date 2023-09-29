@@ -27,7 +27,7 @@ function App() {
     <div>
       <div className="page">
           <Routes>
-            <Route path='/:chat_id' element={<HomePage tele={tele} />} />
+            <Route path='/' element={<HomePage tele={tele} />} />
             <Route path='/detail/:id' element={<DetailPage />} />
             <Route path='/cart' element={<CartPage tele={tele} />} />
             <Route path='*' element={<HomePage />} />
