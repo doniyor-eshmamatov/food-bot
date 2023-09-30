@@ -13,6 +13,7 @@ export default function FilterList() {
     const dispatch = useDispatch()
 
     async function getProducts(category_id) {
+        dispatch(setProducts([]))
         const resp = await Client.get(API_ENDPOINTS.PRODUCT_LIST + `/?category=${category_id}`)
         if (resp.status === 200) {
             dispatch(setProducts(resp.data.results))
