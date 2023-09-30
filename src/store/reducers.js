@@ -37,7 +37,6 @@ const rootSlice = createSlice({
             state.products = action.payload
         },
         setMe: (state, action) => {
-            localStorage.setItem('_disdbfofnwoejndfc', action.payload)
             state.me = action.payload
         }
     },

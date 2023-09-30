@@ -1,11 +1,8 @@
-const chat_id = localStorage.getItem('_disdbfofnwoejndfc') || ''
-
-// `?chat_id=${chat_id}`
-
 const API_ENDPOINTS = {
-    CATEGORIES: 'api/category-list/',
-    PRODUCT_LIST: 'api/product-list/',
-    PRODUCT_LIST_ITEM: 'api/product-list/'
+    CATEGORIES: 'category-list/',
+    PRODUCT_LIST: 'product-list/',
+    PRODUCT_LIST_ITEM: 'product-list/',
+    CREATE_CART: 'creat-card/'
 }
 
 export default API_ENDPOINTS

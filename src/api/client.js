@@ -11,14 +11,14 @@ const Client = {
         return apiService.fetchData({
             method: 'post',
             url,
-            data: { chat_id, ...data }
+            data
         })
     },
     patch: (url, data) => {
         return apiService.fetchData({
             method: 'patch',
             url,
-            data: { chat_id, ...data }
+            data
         })
     },
     delete: (url) => {

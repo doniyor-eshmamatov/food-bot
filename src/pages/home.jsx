@@ -39,7 +39,7 @@ export default function HomePage({ tele }) {
         getCategories()
         getProducts()
         setShowPage(true)
-        if (Number(query?.search.split('?')[1]) || query?.search.split('?')[1] !== '') {
+        if (Number(query?.search.split('?')[1]) && query?.search.split('?')[1] !== '') {
             getMe(query.search.split('?')[1])
         }
     }, [])

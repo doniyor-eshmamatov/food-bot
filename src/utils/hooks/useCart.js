@@ -1,10 +1,10 @@
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { addToCart, downCart, removeOnCart, upCart } from "../../store/reducers"
 
 
 const useCart = () => {
     const dispatch = useDispatch()
-
+    const cart = useSelector(state => state.cartList)
 
     function addCart(data) {
         dispatch(addToCart({ ...data, count: 1 }))
@@ -25,7 +25,7 @@ const useCart = () => {
 
 
 
-    return { addCart, upCartCount, downCartCount, removeInCart }
+    return { cart, addCart, upCartCount, downCartCount, removeInCart }
 }
 
 
