@@ -22,7 +22,7 @@ export default function FilterList() {
 
     function filter(active) {
         setActiveCategory(active)
-        getProducts(active.id)
+        getProducts(active?.id || '')
         const newArr = filterData.filter(cat => cat.id !== active.id)
         return setCategories([{ ...active, active: true }, ...newArr])
     }
