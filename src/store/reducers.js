@@ -31,7 +31,7 @@ const rootSlice = createSlice({
             state.cartList.splice(itemIndex, 1, item)
         },
         setCategories: (state, action) => {
-            state.categories = action.payload
+            state.categories = [{ name: 'Barchasi', id: '' }, ...action.payload]
         },
         setProducts: (state, action) => {
             state.products = action.payload

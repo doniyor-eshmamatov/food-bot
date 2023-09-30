@@ -79,6 +79,7 @@ body {
   justify-content: flex-start;
   width: 100%;
   overflow-x: scroll;
+  flex-wrap: nowrap;
 }
 
 .filter-list::-webkit-scrollbar {
@@ -86,14 +87,16 @@ body {
 }
 
 .filter-item {
-  padding: 8px 15px;
+  padding: 5px 14px;
   border-radius: 14px;
   background-color: #e3e1dee4;
   border: 2px solid #e3e1dee4;
   font-weight: 500;
-  min-width: 100px;
   text-align: center;
   color: #222;
+  /* min-width: 100px; */
+  white-space: nowrap;
+
 }
 
 .filter-item-active {
