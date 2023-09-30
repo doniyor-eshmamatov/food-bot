@@ -211,7 +211,7 @@ body {
   background-color: #dbd4cc8e;
   font-weight: 800;
 }
-
+/* 
 .navigate-cart {
   position: fixed;
   bottom: 0;
@@ -223,15 +223,20 @@ body {
   transform: translateX(-50%);
   justify-content: space-between;
   gap: 10px;
-  background-color: #fff;
-}
+  background-color: #000;
+} */
 
 .navigate-cart-button {
-  padding: 8px 3px;
+  position: fixed;
+  right: -3px;
+  bottom: 80px;
+  padding: 8px 15px;
   text-align: center;
-  border-radius: 10px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
   border: none;
   background-color: #EA80FC;
+  background-color: #e3e1dee4;
   font-weight: 700;
   font-size: 14px;
   outline: none;

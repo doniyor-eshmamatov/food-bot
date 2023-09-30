@@ -4,9 +4,9 @@ import { CSSTransition } from 'react-transition-group';
 import DetailSkeleton from '../components/skeleton/detail-skeleton';
 import Client from '../api/client';
 import API_ENDPOINTS from '../api/api-endpoints';
-import NavigationDetail from '../components/navigation-detail';
 import { useSelector } from 'react-redux';
 import useCart from '../utils/hooks/useCart';
+import Navigation from '../components/navigation';
 
 export default function DetailPage() {
 
@@ -83,7 +83,7 @@ export default function DetailPage() {
         }
 
         <div className="navigate-cart">
-          <NavigationDetail />
+        <Navigation route={'/cart'} />
         </div>
       </div >
     </CSSTransition>

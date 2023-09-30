@@ -62,7 +62,7 @@ export default function HomePage({ tele }) {
                     }
                 </div >
                 <div className="navigate-cart">
-                    <Navigation tele={tele} route={'/cart'} />
+                    <Navigation route={'/cart'} />
                 </div>
             </div >
         </CSSTransition>
