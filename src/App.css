@@ -222,13 +222,13 @@ body {
 
 .navigate-cart {
   position: fixed;
-  right: -3px;
-  bottom: 80px;
+  bottom: 20px;
   padding: 8px 15px;
-  justify-content: space-between;
   background-color: #e3e1dee4;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
+  border-radius: 20px;
+  width: 95%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .navigate-cart-button {
@@ -239,22 +239,17 @@ body {
   font-size: 14px;
   outline: none;
   text-decoration: none;
-  color: #ffffff;
   cursor: pointer;
-}
-
-.navigate-cart-button span {
-  position: absolute;
-  top: -45px;
-  left: -14px;
-  background-color: #EA80FC;
-  display: block;
-  width: 25px;
-  height: 25px;
+  background-color: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
+  gap: 12px;
+  width: 100%;
+}
+
+.navigate-cart-button p {
+  color: #EA80FC;
 }
 
 
