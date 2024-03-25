@@ -1,3 +1,3 @@
 export const appConfig = {
-    apiPrefix: 'https://webappbot12.pythonanywhere.com/api'
+    apiPrefix: 'https://webbot.pythonanywhere.com/api'
 }   
